@@ -7,3 +7,4 @@ Tambien puede utilizarse de forma independiente habilitando el puerto 22
 Se utiliza ubuntu como base por la disponibilidad de paquetes.
 
 Por defecto TZ= Europe/Madrid
+
