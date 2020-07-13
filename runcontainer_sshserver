@@ -11,5 +11,5 @@ service ssh start
 
 echo launching endless command
 echo $(ls /bin/w*)
-/bin/sh
-
+#/bin/sh
+/bin/watch "ls /tmp"
