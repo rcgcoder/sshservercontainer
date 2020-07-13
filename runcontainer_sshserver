@@ -8,6 +8,8 @@ echo setting up the ssh server
 
 echo starting ssh server
 service ssh start
+
+echo launching endless command
 /bin/watch "ps -ef | grep ssh"
 #/bin/bash
 
