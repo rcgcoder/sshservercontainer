@@ -8,10 +8,10 @@ if [ ! -d "$userPath" ]; then
     echo "$userPath not exists";
 	/usr/bin/addUserWithPassword $ENV_USER $ENV_PASSWORD
 fi
-export vncpasswdPath="$userPath/.vnc"
-if [ ! -d "$vncpasswdPath" ]; then
-    echo "$vncpasswdPath not exists";
-	mkdir -p $vncpasswdPath
-fi
+#export vncpasswdPath="$userPath/.vnc"
+#if [ ! -d "$vncpasswdPath" ]; then
+#    echo "$vncpasswdPath not exists";
+#	mkdir -p $vncpasswdPath
+#fi
 
 
