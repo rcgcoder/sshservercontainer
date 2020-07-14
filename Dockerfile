@@ -5,7 +5,7 @@ EXPOSE 22
 
 ARG $withUser=sae
 ARG $withPassword=sae
-ARG $TZ=Europe/Madrid
+ARG $TZ="Europe/Madrid"
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
