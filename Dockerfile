@@ -1,15 +1,16 @@
 FROM ubuntu:latest
 MAINTAINER rcgcoder
 EXPOSE 22
-ENV TZ=Europe/Madrid
-ENV DEBIAN_FRONTEND=noninteractive
+
 
 ARG $withUser=sae
 ARG $withPassword=sae
 
+ENV TZ=Europe/Madrid
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update
 #RUN apt-get -y upgrade 
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -y install mc apt-utils sudo dialog openssh-server tzdata 
 #RUN apt-get -y install lxde
 #RUN apt-get install -y openbox obconf obmenu xterm
