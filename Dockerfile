@@ -9,7 +9,8 @@ ARG $withPassword=sae
 ARG $TimeZone=Europe/Madrid
 
 ENV DEBIAN_FRONTEND=noninteractive
-
+RUN export theTimeZone=$TimeZone 
+RUN echo "/usr/share/zoneinfo/$TimeZone" --- $theTimeZone
 RUN ln -snf $(echo "/usr/share/zoneinfo/$TimeZone") /etc/localtime && echo "$TimeZone" > /etc/timezone
 RUN apt-get update
 #RUN apt-get -y upgrade 
