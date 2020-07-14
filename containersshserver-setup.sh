@@ -1,8 +1,11 @@
 #!/bin/bash
+
 #echo user passed $withUser - password $withPassword
+
 export ENV_USER=${withUser:-sae}
 export ENV_PASSWORD=${withPassword:-$ENV_USER}
 export userPath="/home/$ENV_USER"
+
 echo $userPath -- $username
 if [ ! -d "$userPath" ]; then
     echo "$userPath not exists";
