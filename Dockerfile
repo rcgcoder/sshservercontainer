@@ -5,10 +5,12 @@ EXPOSE 22
 
 ARG $withUser=sae
 ARG $withPassword=sae
-ENV $TZ=Europe/Madrid
+
+ARG $TimeZone=Europe/Madrid
+
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN ln -snf $(echo "/usr/share/zoneinfo/$TimeZone") /etc/localtime && echo "$TimeZone" > /etc/timezone
 RUN apt-get update
 #RUN apt-get -y upgrade 
 RUN apt-get -y install mc apt-utils sudo dialog openssh-server tzdata 
