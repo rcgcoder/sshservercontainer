@@ -3,14 +3,17 @@ MAINTAINER rcgcoder
 EXPOSE 22
 
 
-ARG $withUser=sae
-ARG $withPassword=sae
+ARG withUser=sae
+ARG withPassword=sae
 
-ARG $TimeZone=Europe/Madrid
+ARG TimeZone=Europe/Madrid
+
+RUN export theTimeZone="$TimeZone"
+RUN echo "/usr/share/zoneinfo/$TimeZone" --- $theTimeZone
+
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN export theTimeZone=$TimeZone 
-RUN echo "/usr/share/zoneinfo/$TimeZone" --- $theTimeZone
+
 RUN ln -snf $(echo "/usr/share/zoneinfo/$TimeZone") /etc/localtime && echo "$TimeZone" > /etc/timezone
 RUN apt-get update
 #RUN apt-get -y upgrade 
