@@ -13,4 +13,4 @@ echo launching endless command
 echo $(ls /bin/w*)
 #/bin/sh
 #/bin/watch "ls /tmp"
-sleep infinity
+/usr/bin/bootstrap.sh

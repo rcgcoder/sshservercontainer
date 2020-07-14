@@ -16,5 +16,7 @@ COPY runcontainer_sshserver /usr/bin/runcontainer_sshserver
 RUN chmod 777 -R /usr/bin/runcontainer_sshserver
 COPY containersshserver-setup.sh /usr/bin/containersshserver-setup.sh
 RUN chmod 777 -R /usr/bin/containersshserver-setup.sh
+COPY bootstrap.sh /usr/bin/bootstrap.sh
+RUN chmod 777 -R /usr/bin/bootstrap.sh
 
 ENTRYPOINT ["/bin/bash", "-c", "/usr/bin/runcontainer_sshserver"]
