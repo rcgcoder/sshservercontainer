@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  ssh:
+    image: rcgcoder/sshservercontainer:arm64
+    environment:
+        - withUser=oneUser
+        - withPassword=onePassword
+        - TimeZone=oneTimeZone
+    ports:
+      - "8022:22"
+    deploy:
+      replicas: 1
